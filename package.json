@@ -1,6 +1,6 @@
 {
   "name": "@khoaakt/react-native-jitsimeet",
-  "version": "2.1.1",
+  "version": "3.0.0",
   "description": "React native Wrapper for Jitsi Meet SDK (based on Lucas Bortoli <lucasbortolidev@gmail.com>)",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -40,10 +40,10 @@
     "sdk"
   ],
   "repository": "https://github.com/khoaakt/react-native-jitsimeet",
-  "author": "Lucas Bortoli <lucasbortolidev@gmail.com> (https://github.com/bortolilucas)",
+  "author": "Lucas Bortoli <lucasbortolidev@gmail.com> (https://github.com/bortolilucas), Khoa Nguyen Anh <khoaakt@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bortolilucas/react-native-jitsimeet/issues"
+    "url": "https://github.com/khoaakt/react-native-jitsimeet/issues"
   },
   "homepage": "https://github.com/khoaakt/react-native-jitsimeet#readme",
   "publishConfig": {

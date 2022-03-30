@@ -1,4 +1,4 @@
-import JitsiMeet, { JitsiMeetView } from '@bortolilucas/react-native-jitsimeet';
+import JitsiMeet, { JitsiMeetView } from '@khoaakt/react-native-jitsimeet';
 import React, { useState } from 'react';
 import { StyleSheet, View, Pressable, Text } from 'react-native';
 
