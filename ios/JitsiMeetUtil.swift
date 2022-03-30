@@ -29,7 +29,7 @@ struct JitsiMeetUtil {
         
         builder.userInfo = conferenceUserInfo
       }
-      
+
       if let token = options["token"] as? String {
         builder.token = token
       }
@@ -38,6 +38,12 @@ struct JitsiMeetUtil {
       let featureFlags = options.value(forKey: "featureFlags") as! NSDictionary
       for (flag, value) in featureFlags {
         builder.setFeatureFlag(flag as! String, withValue: value)
+      }
+        
+      // Set the configs flags
+      let configs = options.value(forKey: "configs") as! NSDictionary
+      for (flag, value) in configs {
+        builder.setConfigOverride(flag as! String, withValue: value)
       }
     }
   }

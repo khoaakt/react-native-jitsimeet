@@ -13,6 +13,7 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
+import com.facebook.react.bridge.ReadableType;
 import com.facebook.react.bridge.ReadableMapKeySetIterator;
 import com.facebook.react.module.annotations.ReactModule;
 
@@ -101,6 +102,24 @@ public class JitsiMeetModule extends ReactContextBaseJavaModule {
         String flag = iterator.nextKey();
         Boolean value = featureFlags.getBoolean(flag);
         builder.setFeatureFlag(flag, value);
+      }
+    }
+
+    // Set the configs
+    if (options.hasKey("configs")) {
+      ReadableMap configs = options.getMap("configs");
+      ReadableMapKeySetIterator iterator = configs.keySetIterator();
+      while (iterator.hasNextKey()) {
+        String flag = iterator.nextKey();
+        ReadableType type = configs.getType(flag);
+
+        if (type == ReadableType.Boolean) {
+          Boolean value = configs.getBoolean(flag);
+          builder.setConfigOverride(flag, value);
+        } else if (type == ReadableType.String) {
+          String value = configs.getString(flag);
+          builder.setConfigOverride(flag, value);
+        }
       }
     }
 
