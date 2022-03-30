@@ -13,6 +13,7 @@ export interface JitsiMeetConferenceOptions {
   userInfo?: JitsiMeetUserInfo;
   token?: string;
   featureFlags?: { [key: string]: boolean };
+  configs?: { [key: string]: any };
 }
 
 interface JitsiMeetEvent {
